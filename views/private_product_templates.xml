@@ -1,0 +1,7 @@
+<odoo>
+    <template id="products_only_for_allowed_users" inherit_id="website_sale.products">
+        <xpath expr="//div[@id='products_grid']//table[@class='table table-borderless h-100 m-0']//t[@t-foreach='tr_product']//t[@t-if='td_product']//t[@t-call='website_sale.products_item']" position="attributes">
+            <attribute name="t-foreach">products.filtered(lambda p: p.private_product_ids.filtered(lambda pp: request.env.user.id in pp.user_ids.ids))</attribute>
+        </xpath>
+    </template>
+</odoo>

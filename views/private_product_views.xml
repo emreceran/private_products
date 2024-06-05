@@ -1,0 +1,38 @@
+<odoo>
+    <record id="view_private_product_form" model="ir.ui.view">
+        <field name="name">private.product.form</field>
+        <field name="model">private.product</field>
+        <field name="arch" type="xml">
+            <form string="Private Product">
+                <group>
+                    <field name="name"/>
+                    <field name="product_id"/>
+                    <field name="user_ids" widget="many2many_tags"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_private_product_tree" model="ir.ui.view">
+        <field name="name">private.product.tree</field>
+        <field name="model">private.product</field>
+        <field name="arch" type="xml">
+            <tree string="Private Products">
+                <field name="name"/>
+                <field name="product_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+     <record id="private_product_action" model="ir.actions.act_window">
+        <field name="name">Private Products</field>
+        <field name="res_model">private.product</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_private_product_root" name="Private Products" sequence="10"/>
+    <menuitem id="menu_private_product" name="Private Products" parent="menu_private_product_root" action="private_product_action"/>
+
+
+</odoo>
