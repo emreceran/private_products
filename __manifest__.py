@@ -5,7 +5,7 @@
     'summary': 'Allows defining products visible only to specific users',
     'description': 'This module allows defining products that are only visible to specific users in the website shop.',
     'author': 'Your Name',
-    'depends': ['base', 'website_sale','website'],
+    'depends': ['base', 'website_sale','website','termo'],
     'data': [
         # 'security/ir.model.access.csv',
         # 'security/private_product_security.xml',
